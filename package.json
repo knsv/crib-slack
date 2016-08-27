@@ -16,5 +16,8 @@
     "url": "https://github.com/knsv/crib-slack/issues"
   },
   "homepage": "https://github.com/knsv/crib-slack#readme",
-  "slackbots": "^0.5.2"
+  "slackbots": "^0.5.2",
+  "dependencies": {
+    "slackbots": "^0.5.2"
+  }
 }
