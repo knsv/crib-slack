@@ -79,8 +79,12 @@ bot.on('message', function(msg) {
     }
     if(message.text && message.text.match(/KNUTS_DAILY_STEPS/)){
         bot.postMessageToChannel('general', 'Woff woff, husse duktig!', params);
-        log.debug('KNUTS_DAILY_STEPS');
         buss.emit('KNUT_COMES_HOME', [0]);
+    }
+    if(message.text && message.text.match(/BJARKE_ZONE/)){
+        bot.postMessageToChannel('general', 'WHOAAA!!!! _B J A R K E_ is in DA House (or out)!!!!!', params);
+        log.debug('BJARKE_ZONE');
+        buss.emit('BJARKE_ZONE', [0]);
     }
 });
 
