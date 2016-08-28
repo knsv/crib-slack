@@ -24,7 +24,7 @@ bot.on('start', function() {
         icon_emoji: ':alien:'
     };
 
-    bot.postMessageToChannel('general', 'ជំរាបសួរមិត្តភក្តិ, I am am ready to serve!', params);
+    // bot.postMessageToChannel('general', 'ជំរាបសួរមិត្តភក្តិ, I am am ready to serve!', params);
 
     // define channel, where bot exist. You can adjust it there https://my.slack.com/services
     //bot.postMessageToChannel('general', 'Grrrr!', params);
