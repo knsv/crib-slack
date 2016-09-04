@@ -43,7 +43,7 @@ bot.on('start', function() {
 bot.on('message', function(msg) {
     // more information about additional params https://api.slack.com/methods/chat.postMessage
     var params = {
-        icon_emoji: ':dog:'
+        icon_emoji: ':alien:'
     };
 
 
@@ -60,6 +60,7 @@ bot.on('message', function(msg) {
     }else{
         message = msg;
     }
+
 
 
     if(message.text && message.text.match(/KNUT_LEAVES_HOME/)){
@@ -85,6 +86,31 @@ bot.on('message', function(msg) {
         bot.postMessageToChannel('general', 'WHOAAA!!!! _B J A R K E_ is in DA House (or out)!!!!!', params);
         log.debug('BJARKE_ZONE');
         buss.emit('BJARKE_ZONE', [0]);
+    }
+
+    if(message.text && message.text.match(/MARIA_COMES_HOME/)){
+        bot.postMessageToChannel('general', 'ជំរាបសួរមិត្តភក្តិ! Tjoho!! Mamma kommer hem!!!', params);
+        log.debug('MARIA_COMES_HOME');
+        buss.emit('MARIA_COMES_HOME', [0]);
+    }
+
+    if(message.text && message.text.match(/MARIA_LEAVES_WORK/)){
+        bot.postMessageToChannel('general', 'ជំរាបសួរមិត្តភក្តិ! Mamma sticker från jobbet nu!', params);
+        log.debug('MARIA_LEAVES_WORK');
+        buss.emit('MARIA_LEAVES_WORK', [0]);
+    }
+
+
+    if(message.text && message.text.match(/MARIA_LEAVES_HOME/)){
+        bot.postMessageToChannel('general', 'ជំរាបសួរមិត្តភក្តិ! Mamma sticker hemmifrån nu!', params);
+        log.debug('MARIA_LEAVES_HOME');
+        buss.emit('MARIA_LEAVES_HOME', [0]);
+    }
+
+    if(message.text && message.text.match(/MARIA_LEAVES_GYM/)){
+        bot.postMessageToChannel('general', 'ជំរាបសួរមិត្តភក្តិ!_Sticker från gymmet nu!', params);
+        log.debug('MARIA_LEAVES_GYM');
+        buss.emit('MARIA_LEAVES_GYM', [0]);
     }
 });
 
