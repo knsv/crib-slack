@@ -62,7 +62,7 @@ bot.on('message', function(msg) {
     }
 
 
-    buss.emit('SLACK_MESAGE',[message]);
+    buss.emit('SLACK_MESSAGE',[message]);
 });
 
 log.info('Slack service STARTED', process.cwd());
