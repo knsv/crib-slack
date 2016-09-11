@@ -59,7 +59,7 @@ bot.on('message', function(msg) {
         message = msg;
     }
 
-
+    log.debug('Emitting slack message');
     buss.emit('SLACK_MESSAGE',[message]);
 });
 
