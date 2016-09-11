@@ -62,56 +62,7 @@ bot.on('message', function(msg) {
     }
 
 
-
-    if(message.text && message.text.match(/KNUT_LEAVES_HOME/)){
-        bot.postMessageToChannel('general', 'leaves hooome ouou!', params);
-        log.debug('KNUT_LEAVES_HOME');
-        buss.emit('KNUT_LEAVES_HOME', [0]);
-    }
-    if(message.text && message.text.match(/KNUT_LEAVES_WORK/)){
-        bot.postMessageToChannel('general', 'leaves work, ouahoo!', params);
-        log.debug('KNUT_LEAVES_WORK');
-        buss.emit('KNUT_LEAVES_WORK', [0]);
-    }
-    if(message.text && message.text.match(/KNUT_COMES_HOME/)){
-        bot.postMessageToChannel('general', 'comes home, woff woff!', params);
-        log.debug('KNUT_COMES_HOME');
-        buss.emit('KNUT_COMES_HOME', [0]);
-    }
-    if(message.text && message.text.match(/KNUTS_DAILY_STEPS/)){
-        bot.postMessageToChannel('general', 'Woff woff, husse duktig!', params);
-        buss.emit('KNUT_COMES_HOME', [0]);
-    }
-    if(message.text && message.text.match(/BJARKE_ZONE/)){
-        bot.postMessageToChannel('general', 'WHOAAA!!!! _B J A R K E_ is in DA House (or out)!!!!!', params);
-        log.debug('BJARKE_ZONE');
-        buss.emit('BJARKE_ZONE', [0]);
-    }
-
-    if(message.text && message.text.match(/MARIA_COMES_HOME/)){
-        bot.postMessageToChannel('general', 'ជំរាបសួរមិត្តភក្តិ! Tjoho!! Mamma kommer hem!!!', params);
-        log.debug('MARIA_COMES_HOME');
-        buss.emit('MARIA_COMES_HOME', [0]);
-    }
-
-    if(message.text && message.text.match(/MARIA_LEAVES_WORK/)){
-        bot.postMessageToChannel('general', 'ជំរាបសួរមិត្តភក្តិ! Mamma sticker från jobbet nu!', params);
-        log.debug('MARIA_LEAVES_WORK');
-        buss.emit('MARIA_LEAVES_WORK', [0]);
-    }
-
-
-    if(message.text && message.text.match(/MARIA_LEAVES_HOME/)){
-        bot.postMessageToChannel('general', 'ជំរាបសួរមិត្តភក្តិ! Mamma sticker hemmifrån nu!', params);
-        log.debug('MARIA_LEAVES_HOME');
-        buss.emit('MARIA_LEAVES_HOME', [0]);
-    }
-
-    if(message.text && message.text.match(/MARIA_LEAVES_GYM/)){
-        bot.postMessageToChannel('general', 'ជំរាបសួរមិត្តភក្តិ!_Sticker från gymmet nu!', params);
-        log.debug('MARIA_LEAVES_GYM');
-        buss.emit('MARIA_LEAVES_GYM', [0]);
-    }
+    buss.emit('SLACK_MESAGE',[message]);
 });
 
 log.info('Slack service STARTED', process.cwd());
