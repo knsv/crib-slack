@@ -46,8 +46,6 @@ bot.on('message', function(msg) {
         icon_emoji: ':alien:'
     };
 
-
-
     if(msg.type !== 'message'){
         return;
     }
@@ -63,6 +61,14 @@ bot.on('message', function(msg) {
 
 
     buss.emit('SLACK_MESSAGE',[message]);
+});
+
+buss.on('POST_TO_SLACK_CHANNEL', function(args){
+    var params = {
+        icon_emoji: ':alien:'
+    };
+
+    bot.postMessageToChannel(args[0], args[1], params);
 });
 
 log.info('Slack service STARTED', process.cwd());

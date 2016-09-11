@@ -9,8 +9,6 @@ exports.init = (_buss) => {
     buss = _buss;
 };
 
-// exports.recallScene = function(scene){
-//     log.info('Recall scene called by client buss for scene: ',scene);
-//
-//     buss.emit('HUE_RECALL', [scene]);
-// };
+exports.postMessageToChannel = function(channel, msgText){
+    buss.emit('POST_TO_SLACK_CHANNEL', [channel, msgText]);
+};
