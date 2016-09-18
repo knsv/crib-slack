@@ -13,7 +13,7 @@ var db = {};
 var SlackBot = require('slackbots');
 
 
-var connect = function(){
+// var connect = function(){
     // create a bot
     var bot = new SlackBot({
         token: process.env.CRIB_SLACK_TOKEN, // Add a bot https://my.slack.com/services/new/bot and put the token
@@ -65,11 +65,17 @@ var connect = function(){
         buss.emit('SLACK_MESSAGE',[message]);
     });
 
-    return bot;
-};
+bot.on('error', function(msg) {
+
+    log.debug('connect failed', msg);
+
+});
+//
+//     return bot;
+// };
 
 
-bot = connect();
+// bot = connect();
 
 
 buss.on('POST_TO_SLACK_CHANNEL', function(args){
@@ -85,11 +91,14 @@ buss.on('SLACK_RECONNECT', function(args){
         icon_emoji: ':alien:'
     };
 
-    bot = connect();
+    // bot = connect();
 });
 
 log.info('Slack service STARTED', process.cwd());
 
 setInterval(function(){
+    var params = {
+        icon_emoji: ':alien:'
+    };
     bot.postMessageToChannel('ctrl', 'Om du ser detta bör du stänga av notifieringar för ctrl kanalen! (Inte för de andra kanalerna)', params);
-},30000);
+},15 * 60 * 1000);
