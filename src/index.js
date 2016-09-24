@@ -92,13 +92,14 @@ buss.on('SLACK_RECONNECT', function(args){
     };
 
     // bot = connect();
+    process.exit(0);
 });
 
 log.info('Slack service STARTED', process.cwd());
 
-setInterval(function(){
-    var params = {
-        icon_emoji: ':alien:'
-    };
-    bot.postMessageToChannel('ctrl', 'Om du ser detta bör du stänga av notifieringar för ctrl kanalen! (Inte för de andra kanalerna)', params);
-},15 * 60 * 1000);
+// setInterval(function(){
+//     var params = {
+//         icon_emoji: ':alien:'
+//     };
+//     bot.postMessageToChannel('ctrl', 'Om du ser detta bör du stänga av notifieringar för ctrl kanalen! (Inte för de andra kanalerna)', params);
+// },15 * 60 * 1000);
